@@ -65,10 +65,10 @@ export const deleteUser = async (req, res) => {
 export const getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
-    res.json(users);
+   return  res.json(users);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
+   return  res.status(500).json({ error: "Internal Server Error" });
   }
 };
 

@@ -4,7 +4,8 @@ import cors from 'cors';
 import connect from './config/Config.js'
 import cookieParser from "cookie-parser";
 import userRouter from "./routes/UserRoutes.js";
-import productRouter from "./routes/ProductRoutes.js"
+import productRouter from "./routes/ProductRoutes.js";
+import  orderRouter from "./routes/OrderRoutes.js"
 dotenv.config();
 
 const PORT = process.env.PORT || 6666;
@@ -23,6 +24,7 @@ app.use(cookieParser());
 app.use(cors(corsOption));
 app.use('/user', userRouter);
 app.use('/products',productRouter)
+app.use('/order', orderRouter)
 
 
 app.listen(PORT, ()=>{

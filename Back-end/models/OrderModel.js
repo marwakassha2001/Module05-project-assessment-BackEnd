@@ -6,11 +6,15 @@ const orderSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    quantity: {
+      type: Number,
+      required: true,
+    },
     status: {
       type: String,
       required: true,
-      enum: ["Initiated", "In Process", "Sent", "Delivered", "Declined"],
-      default: "Initiated",
+      enum: ["Approved", "Rejected", "Sent", "Pending"],
+      default: "Approved",
     },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -25,8 +29,8 @@ const orderSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    address: {
-      type: String,
+    Price: {
+      type: Number,
       required: true,
     },
   },
